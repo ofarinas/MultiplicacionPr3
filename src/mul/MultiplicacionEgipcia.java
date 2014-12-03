@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mul;
+/*package mul;
 
 import java.math.BigInteger;
 
@@ -11,6 +11,7 @@ import java.math.BigInteger;
  *
  * @author usuario
  */
+/*
 public class MultiplicacionEgipcia {
     
     public BigInteger multiplicacionEgipcia(BigInteger bigInteger1 ,BigInteger bigInteger2 ){
@@ -28,7 +29,7 @@ public class MultiplicacionEgipcia {
             }
     return null;
     }
-}
+}*/
 
 /*
 función multiplicaEgipcia (entero n, entero m, entero doble1) devuelve (entero p, entero s)
