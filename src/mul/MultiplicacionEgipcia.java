@@ -13,19 +13,19 @@ import java.math.BigInteger;
  */
 public class MultiplicacionEgipcia {
 
-    public BigInteger multiplicacionEgipcia(BigInteger bigInteger1, BigInteger bigInteger2) {
+    public static BigInteger multiplicacionEgipcia(BigInteger bigInteger1, BigInteger bigInteger2) {
         Producto producto = multiplicaEgipcia(bigInteger1, bigInteger2, new BigInteger("1"));
-        return producto.getBigInteger();
+        return producto.bigIntegerResultado;
     }
 
-    private Producto multiplicaEgipcia(BigInteger n, BigInteger m, BigInteger double1) {
+    private  static Producto multiplicaEgipcia(BigInteger n, BigInteger m, BigInteger double1) {
         if (double1.compareTo(m) == 1) {
             return new Producto(new BigInteger("0"), new BigInteger("0"));
         }
         if (double1.compareTo(m) != 1) {
             Producto mul = multiplicaEgipcia(n, m, double1.multiply(new BigInteger("2")));
-            if (mul.getBigInteger2().add(double1).compareTo(m) != 1) {
-                return new Producto(mul.getBigInteger().add(n.multiply(double1)), mul.getBigInteger2().add(double1));
+            if (mul.bigInteger2Aux.add(double1).compareTo(m) != 1) {
+                return new Producto(mul.bigIntegerResultado.add(n.multiply(double1)), mul.bigInteger2Aux.add(double1));
             } else {
                 return mul;
             }
@@ -33,16 +33,15 @@ public class MultiplicacionEgipcia {
         return null;
     }
 }
+ class Producto {
+   BigInteger bigIntegerResultado ;   
+   BigInteger bigInteger2Aux ;
 
-/*
- función multiplicaEgipcia (entero n, entero m, entero doble1) devuelve (entero p, entero s)
- si doble1 > m entonces devolver (0,0) fin si
- si doble1 ≤ m entonces
- (p’, s’) ← multiplicaEgipcia(n, m, 2*doble1) 
- si s’ + doble1 ≤ m entonces
- devolver (p’+n*doble1, s’+doble1)
- si no
- devolver (p’, s’)
- fin si
- fin si
- fin funció*/
+    public Producto(BigInteger bigInteger, BigInteger bigInteger2) {
+        this.bigIntegerResultado = bigInteger;
+        this.bigInteger2Aux = bigInteger2;
+    }
+
+   
+    
+}
